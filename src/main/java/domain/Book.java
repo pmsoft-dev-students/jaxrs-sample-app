@@ -3,7 +3,7 @@ package domain;
 import java.util.UUID;
 
 @SuppressWarnings("UnusedDeclaration")
-public class Book {
+public final class Book {
 
     private final UUID _id;
     private String _title;
@@ -34,5 +34,23 @@ public class Book {
 
     public void setAuthor(String author) {
         _author = author;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
+
+        Book book = (Book) o;
+
+        return _id.equals(book._id);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return _id.hashCode();
     }
 }
