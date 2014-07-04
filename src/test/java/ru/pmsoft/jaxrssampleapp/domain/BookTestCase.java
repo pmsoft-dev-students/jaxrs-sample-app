@@ -1,4 +1,4 @@
-package domain;
+package ru.pmsoft.jaxrssampleapp.domain;
 
 import com.google.common.collect.ObjectArrays;
 import org.testng.annotations.DataProvider;

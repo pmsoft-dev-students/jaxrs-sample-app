@@ -1,7 +1,7 @@
-package dataaccess;
+package ru.pmsoft.jaxrssampleapp.dataaccess;
 
 import com.google.common.collect.Sets;
-import domain.Book;
+import ru.pmsoft.jaxrssampleapp.domain.Book;
 import org.testng.annotations.Test;
 
 import java.util.Collection;
@@ -41,7 +41,7 @@ public class InMemoryBookRepositoryTestCase {
         InMemoryBookRepository sut = createSystemUnderTest(baseCollection);
         Book expected = createBook();
 
-        sut.add(null);
+        sut.add(expected);
 
         assertThat(baseCollection, hasItem(expected));
     }

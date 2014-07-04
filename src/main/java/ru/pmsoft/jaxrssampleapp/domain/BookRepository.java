@@ -1,4 +1,4 @@
-package domain;
+package ru.pmsoft.jaxrssampleapp.domain;
 
 public interface BookRepository {
     void add(Book book);

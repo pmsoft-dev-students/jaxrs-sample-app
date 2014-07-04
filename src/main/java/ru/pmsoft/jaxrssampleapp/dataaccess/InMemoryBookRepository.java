@@ -1,15 +1,18 @@
-package dataaccess;
+package ru.pmsoft.jaxrssampleapp.dataaccess;
 
-import domain.Book;
-import domain.BookRepository;
+import ru.pmsoft.jaxrssampleapp.domain.Book;
+import ru.pmsoft.jaxrssampleapp.domain.BookRepository;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.Collection;
 
 public class InMemoryBookRepository implements BookRepository {
 
     private final Collection<Book> _baseCollection;
 
-    public InMemoryBookRepository(Collection<Book> baseCollection) {
+    @Inject
+    public InMemoryBookRepository(@Named("baseCollection") Collection<Book> baseCollection) {
         if (baseCollection == null)
             throw new IllegalArgumentException("Parameter 'baseCollection' can't be null");
 

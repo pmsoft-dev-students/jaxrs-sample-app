@@ -1,4 +1,4 @@
-package domain;
+package ru.pmsoft.jaxrssampleapp.domain;
 
 import java.util.UUID;
 
@@ -6,8 +6,8 @@ import java.util.UUID;
 public final class Book {
 
     private final UUID _id;
-    private String _title;
-    private String _author;
+    private String _title = "";
+    private String _author = "";
 
     public Book(UUID id) {
         if (id == null)
@@ -46,7 +46,6 @@ public final class Book {
         Book book = (Book) o;
 
         return _id.equals(book._id);
-
     }
 
     @Override
