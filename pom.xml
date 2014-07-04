@@ -8,6 +8,7 @@
     <groupId>ru.pmsoft</groupId>
     <artifactId>jaxrs-sample-app</artifactId>
     <version>0.1</version>
+    <packaging>war</packaging>
 
     <build>
         <plugins>
