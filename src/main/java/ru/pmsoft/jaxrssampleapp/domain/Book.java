@@ -1,5 +1,6 @@
 package ru.pmsoft.jaxrssampleapp.domain;
 
+import java.util.Date;
 import java.util.UUID;
 
 @SuppressWarnings("UnusedDeclaration")
@@ -8,6 +9,7 @@ public final class Book {
     private final UUID _id;
     private String _title = "";
     private String _author = "";
+    private Date _dateAdded;
 
     public Book(UUID id) {
         if (id == null)
@@ -34,6 +36,14 @@ public final class Book {
 
     public void setAuthor(String author) {
         _author = author;
+    }
+
+    public Date getDateAdded() {
+        return _dateAdded;
+    }
+
+    public void setDateAdded(Date dateAdded) {
+        _dateAdded = dateAdded;
     }
 
     @Override
