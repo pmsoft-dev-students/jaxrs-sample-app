@@ -11,6 +11,7 @@ import ru.pmsoft.jaxrssampleapp.domain.BookRepository;
 import javax.inject.Singleton;
 import javax.ws.rs.ApplicationPath;
 import java.util.Collection;
+import java.util.Date;
 import java.util.UUID;
 
 @ApplicationPath("rest")
@@ -23,6 +24,7 @@ public class ApplicationConfig extends ResourceConfig {
                 Book warAndPeace = new Book(UUID.randomUUID());
                 warAndPeace.setTitle("War and Peace");
                 warAndPeace.setAuthor("Leo Tolstoy");
+                warAndPeace.setDateAdded(new Date());
                 bind(InMemoryBookRepository.class).to(BookRepository.class).in(Singleton.class);
                 bind(Sets.newHashSet(warAndPeace)).to(new TypeLiteral<Collection<Book>>() {}).named("baseCollection");
             }
